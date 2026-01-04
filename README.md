@@ -45,7 +45,12 @@ Sisteminizde Python yüklü olduğundan emin olduktan sonra Pygame kütüphanesi
 pip install pygame
 ```
 
-### 3. Oyunu Çalıştırma
+### 3. CMD ekranına şu komutu yazarak oyunun yüklü olduğu klasörün içine girmelisin
+```bash
+cd AHLAKI-DEGER-EGITIMI-OYUNU
+```
+
+### 4. Oyunu Çalıştırma
 Proje klasörüne girin ve ana dosyayı şu komutla başlatın
 ```bash 
 python main.py
