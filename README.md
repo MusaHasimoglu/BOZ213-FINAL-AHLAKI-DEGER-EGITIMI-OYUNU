@@ -45,7 +45,8 @@ Sisteminizde Python yüklü olduğundan emin olduktan sonra Pygame kütüphanesi
 pip install pygame
 ```
 
-### 3. CMD ekranına şu komutu yazarak oyunun yüklü olduğu klasörün içine girmelisin
+### 3. Oyunun Yüklü Olduğu Klasöre Girme
+CMD ekranına şu komutu yazarak oyunun yüklü olduğu klasörün içine girmelisin
 ```bash
 cd AHLAKI-DEGER-EGITIMI-OYUNU
 ```
