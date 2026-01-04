@@ -6,7 +6,7 @@ from level_manager import BaseLevel
 class Level4(BaseLevel):
     """
     Bölüm 4: Kütüphane Sahnesi.
-    OOP KRİTERİ: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak 
+    OOP: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak 
     merkezi diyalog motoru ve metin sarma sistemleri projeye dahil edilmiştir.
     Bu bölümde toplumsal alanlarda gürültü yapmama ve başkalarının haklarına saygı teması işlenir.
     """

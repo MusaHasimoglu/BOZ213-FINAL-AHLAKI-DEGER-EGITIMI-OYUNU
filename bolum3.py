@@ -6,7 +6,7 @@ from level_manager import BaseLevel
 class Level3(BaseLevel):
     """
     Bölüm 3: Okul Çıkışı / Şehir Parkı.
-    OOP KRİTERİ: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alarak
+    OOP: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alarak
     dinamik diyalog motoru ve metin sarma algoritmalarını kullanır.
     """
     def __init__(self, pencere, player, player_group):

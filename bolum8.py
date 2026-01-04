@@ -5,7 +5,7 @@ from level_manager import BaseLevel
 class Level8(BaseLevel):
     """
     Bölüm 8: Sokak - Para Bulma.
-    OOP KRİTERİ: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak 
+    OOP : Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak 
     JSON tabanlı senaryo motoru ve merkezi UI sistemleri kullanılır.
     TEMATİK ODAK: Sahipsiz bir eşya bulunduğunda dürüstlük ve empati ilkelerine 
     uygun karar verme becerisi.

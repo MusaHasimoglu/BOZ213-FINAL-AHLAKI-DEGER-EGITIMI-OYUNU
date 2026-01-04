@@ -6,7 +6,7 @@ from level_manager import BaseLevel
 class Level2(BaseLevel):
     """
     Bölüm 2: Sınav Sahnesi.
-    OOP KRİTERİ: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak
+    OOP: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak
     diyalog ve analiz sistemleri projeye dahil edilmiştir.
     """
     def __init__(self, pencere, player, player_group):

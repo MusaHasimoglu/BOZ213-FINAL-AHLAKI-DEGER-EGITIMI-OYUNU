@@ -1,10 +1,15 @@
 import pygame
 
 # --- EKRAN AYARLARI ---
-# Hocanın Kriteri: Anlamlı ve açıklayıcı değişken isimleri
+
 GENISLIK = 1280
 YUKSEKLIK = 720
 FPS = 60
+
+# Tam Ekran Modu ve Otomatik Ölçeklendirme Flag'leri
+# pygame.SCALED: Görüntüyü bozmadan her monitöre sığdırır.
+# pygame.FULLSCREEN: Oyunu tam ekranda başlatır.
+EKRAN_FLAGLARI = pygame.FULLSCREEN | pygame.SCALED
 
 # --- GÖRSEL AYARLAR ---
 # Karakterlerin ekran boyutuna göre ölçeklendirilme oranı

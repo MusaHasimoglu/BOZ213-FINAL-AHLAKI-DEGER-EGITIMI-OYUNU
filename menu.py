@@ -17,7 +17,7 @@ class Menu:
         self.last_update = pygame.time.get_ticks() # Animasyon hızı için zaman takibi
         
         # --- GÖRSEL YÜKLEME VE HATA YÖNETİMİ ---
-        # Hocanın Kriteri: Yazılımın çökmesini önlemek için 'try-except' blokları kullanımı.
+        # Yazılımın çökmesini önlemek için 'try-except' blokları kullanımı.
         try:
             # Arka planı yükle ve ekran boyutuna ölçekle
             self.arkaplan = pygame.image.load("assets/Images/UI/menu.png").convert()

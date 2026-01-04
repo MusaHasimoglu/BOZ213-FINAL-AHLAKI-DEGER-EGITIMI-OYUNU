@@ -6,7 +6,7 @@ from level_manager import BaseLevel
 class Level7(BaseLevel):
     """
     Bölüm 7: Oda - Kişisel Verilerin Gizliliği.
-    OOP KRİTERİ: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak 
+    OOP: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak 
     JSON tabanlı diyalog ve analiz sistemleri projeye dahil edilmiştir.
     Bu bölümde, üçüncü bir şahsa ait özel bilginin (telefon numarası) izinsiz 
     paylaşılıp paylaşılmaması ikilemi işlenir.

@@ -22,12 +22,12 @@ class Game:
         pygame.init()
         
         # --- SES SİSTEMİ BAŞLATMA ---
-        # Oyunun işitsel geri bildirimleri için mikser modülü başlatılır
         pygame.mixer.init()
         
-        # Ekran ayarları settings.py dosyasındaki sabitlerden çekilir
-        self.pencere = pygame.display.set_mode((GENISLIK, YUKSEKLIK))
-        pygame.display.set_caption("Ahlaki Karar Oyunu")
+        # --- EKRAN AYARLARI ---
+        # settings.py dosyasındaki EKRAN_FLAGLARI (Tam Ekran + Ölçekleme) eklendi
+        self.pencere = pygame.display.set_mode((GENISLIK, YUKSEKLIK), EKRAN_FLAGLARI)
+        pygame.display.set_caption("Ahlaki Değer Eğitimi") # Oyun ismi güncellendi
         
         # Oyunun her bilgisayarda aynı hızda çalışması için saat objesi oluşturulur
         self.clock = pygame.time.Clock()
@@ -36,11 +36,11 @@ class Game:
         self.menu = Menu(self.pencere)
         self.durum = "MENU" 
 
-        # Oyuncu (Player) nesnesi tekil bir grup içinde yönetilir (Sprite yönetimi)
+        # Oyuncu (Player) nesnesi tekil bir grup içinde yönetilir
         self.player = Player((100, 595)) 
         self.player_group = pygame.sprite.GroupSingle(self.player)
 
-        # Bölüm kontrol değişkenleri; oyun ilk bölümden başlatılır
+        # Bölüm kontrol değişkenleri
         self.current_level_id = 1 
         self.level = None
 
@@ -51,13 +51,10 @@ class Game:
         """Atmosferi desteklemek için arka plan müziğini sonsuz döngüde başlatır."""
         muzik_yolu = "assets/Sounds/Menu Theme.wav"
         
-        # Dosya yolu kontrolü yapılarak olası çökmelerin önüne geçilir
         if os.path.exists(muzik_yolu):
             try:
                 pygame.mixer.music.load(muzik_yolu)
-                # Ses seviyesi, diyalogların okunmasını engellememek için düşük tutulur
                 pygame.mixer.music.set_volume(0.15)
-                # loops=-1 parametresi müziğin kesintisiz çalmasını sağlar
                 pygame.mixer.music.play(loops=-1)
             except Exception as e:
                 print(f"Müzik çalma hatası: {e}")
@@ -66,7 +63,6 @@ class Game:
 
     def setup_level(self):
         """Seçili bölüm ID'sine göre ilgili sınıfı örnekler ve oyuncu konumunu ayarlar."""
-        # Her bölüm için oyuncunun başlangıç koordinatları o sahnenin tasarımına göre güncellenir
         if self.current_level_id == 1:
             self.level = Level1(self.pencere, self.player, self.player_group)
         elif self.current_level_id == 2:
@@ -108,27 +104,29 @@ class Game:
     def run(self):
         """Oyunun ana döngüsü; olayları yönetir, ekranı günceller ve durumu kontrol eder."""
         while True:
-            # Durum Yönetimi: Menü mü yoksa Oyun mu aktif?
             if self.durum == "MENU":
                 self.durum = self.menu.run()
                 if self.durum == "OYUN":
-                    self.setup_level() # Menüden çıkınca ilk bölüm yüklenir
+                    self.setup_level()
             
             elif self.durum == "OYUN":
-                # Pygame olaylarını (kapatma tuşu vb.) kontrol eder
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         pygame.quit()
                         sys.exit()
+                    
+                    # --- F11 İLE TAM EKRAN GEÇİŞİ ---
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_F11:
+                            pygame.display.toggle_fullscreen()
 
                 # Her karede ekran temizlenir
                 self.pencere.fill(SIYAH) 
 
                 if self.level:
-                    # Aktif bölümün mantığı çalıştırılır ve varsa yeni bölüm ID'si alınır
                     new_level_id = self.level.run()
 
-                    # Bölüm geçiş kontrolü: Eğer fonksiyon farklı bir ID döndürürse yeni bölüm yüklenir
+                    # Bölüm geçiş kontrolü
                     if new_level_id != self.current_level_id:
                         self.current_level_id = new_level_id
                         self.setup_level()
@@ -136,10 +134,9 @@ class Game:
             # Grafiklerin ekrana yansıtılması
             pygame.display.update()
             
-            # FPS (Saniyedeki Kare Sayısı) 60'a sabitlenerek işlemci kullanımı optimize edilir
+            # FPS 60'a sabitlenir
             self.clock.tick(60)
 
-# Programın doğrudan çalıştırılıp çalıştırılmadığını kontrol eder
 if __name__ == "__main__":
     game = Game()
     game.run()

@@ -5,13 +5,13 @@ from level_manager import BaseLevel
 class Level6(BaseLevel):
     """
     Bölüm 6: Trafik Sahnesi.
-    OOP KRİTERİ: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak 
-    JSON tabanlı senaryo yönetimi ve merkezi UI sistemleri kullanılır[cite: 77, 153].
-    TEMATİK ODAK: Trafik kuralları ve başkalarının haklarına saygı duyma[cite: 12, 51].
+    OOP: Kalıtım (Inheritance). BaseLevel ata sınıfından miras alınarak 
+    JSON tabanlı senaryo yönetimi ve merkezi UI sistemleri kullanılır.
+    TEMATİK ODAK: Trafik kuralları ve başkalarının haklarına saygı duyma.
     """
     def __init__(self, pencere, player, player_group):
         # 'bolum6' anahtarı ile JSON senaryosu yüklenir.
-        # Bu yaklaşım veriyi koddan ayırarak modülerliği sağlar[cite: 82, 153].
+        # Bu yaklaşım veriyi koddan ayırarak modülerliği sağlar.
         super().__init__(pencere, player, player_group, "bolum6")
         
         # --- DURUM YÖNETİMİ (State Management) ---
@@ -21,13 +21,13 @@ class Level6(BaseLevel):
         
         # --- ARKAPLAN VE GÖRSEL VARLIKLAR ---
         try:
-            # Şehir trafiği arka planı yüklenir[cite: 118].
+            # Şehir trafiği arka planı yüklenir.
             self.arkaplan = pygame.image.load("assets/Images/Backgrounds/6-trafik.png").convert()
             self.arkaplan = pygame.transform.scale(self.arkaplan, (GENISLIK, YUKSEKLIK))
             self.press_e_img = pygame.image.load("assets/Images/UI/press_e.png").convert_alpha()
             self.press_e_img = pygame.transform.scale(self.press_e_img, (40, 40))
         except Exception as e:
-            # HATA TOLERANSI: Görsel bulunamazsa sistemin çökmemesi için alternatif yüzeyler oluşturulur[cite: 161].
+            # HATA TOLERANSI: Görsel bulunamazsa sistemin çökmemesi için alternatif yüzeyler oluşturulur.
             print(f"Hata: {e}")
             self.arkaplan = pygame.Surface((GENISLIK, YUKSEKLIK)); self.arkaplan.fill((80, 80, 80))
             self.press_e_img = pygame.Surface((30, 30)); self.press_e_img.fill(ALTIN)
@@ -71,7 +71,7 @@ class Level6(BaseLevel):
             else:
                 self.player.input_enabled = True
 
-        # BaseLevel'dan miras alınan tuş yönetim sistemini çalıştırır (1 ve 2 tuşları)[cite: 64].
+        # BaseLevel'dan miras alınan tuş yönetim sistemini çalıştırır (1 ve 2 tuşları).
         self.input_yonetimi(keys)
 
         # --- ÇİZİMLER ---
@@ -96,12 +96,12 @@ class Level6(BaseLevel):
             # Oyuncunun empati kurmasını ve duruma müdahale etmesini sağlayan yönerge.
             self.bilgi_kutusu_ciz("Yaya geçidinin üstünde duran araba yüzünden karşıya geçemiyorsun bir şeyler yap ve sürücüyle diyaloğa geç!")
         elif self.diyalog_aktif:
-            # JSON'dan çekilen diyalog metinleri "Sürücü" ismiyle ekrana yansıtılır[cite: 63].
+            # JSON'dan çekilen diyalog metinleri "Sürücü" ismiyle ekrana yansıtılır.
             self.diyalog_kutusu_ciz(npc_ismi="Sürücü")
         
         # Bölüm bittiyse etik analiz ekranını göster ve ESC ile Bölüm 7'ye geçiş yap.
         if self.diyalog_bitti:
-            self.feedback_ekrani_ciz() # Seçimlerin ahlaki sonuçlarını gösterir[cite: 65].
+            self.feedback_ekrani_ciz() # Seçimlerin ahlaki sonuçlarını gösterir.
             if keys[pygame.K_ESCAPE]: return 7 
 
         return 6
@@ -109,7 +109,7 @@ class Level6(BaseLevel):
     def bilgi_kutusu_ciz(self, mesaj):
         """
         Dinamik satır kaydırmalı bilgilendirme kutusu.
-        Metni kutu genişliğine uyarlamak için 'metni_sar' algoritması kullanılır[cite: 91, 157].
+        Metni kutu genişliğine uyarlamak için 'metni_sar' algoritması kullanılır.
         """
         kutu_g, kutu_y = 600, 160
         kutu_rect = pygame.Rect(GENISLIK//2 - kutu_g//2, YUKSEKLIK//2 - 200, kutu_g, kutu_y)

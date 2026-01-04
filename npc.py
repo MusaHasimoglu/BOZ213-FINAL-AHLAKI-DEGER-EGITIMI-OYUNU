@@ -4,9 +4,9 @@ from settings import *
 
 class NPC(pygame.sprite.Sprite):
     """
-    OOP KRİTERİ: Kalıtım (Inheritance).
+    OOP: Kalıtım (Inheritance).
     Tüm NPC'ler Pygame'in Sprite sınıfından miras alarak sprite grupları ile 
-    yönetilebilir ve otomatik çizim/çarpışma özelliklerini kullanır[cite: 76, 77].
+    yönetilebilir ve otomatik çizim/çarpışma özelliklerini kullanır.
     """
     def __init__(self, x, y, animasyonlar, varsayilan_durum='idle', boyut=(120, 120), ters_cevir= False):
         super().__init__()
@@ -19,8 +19,8 @@ class NPC(pygame.sprite.Sprite):
         self.facing_right = True
 
         # --- VERİ YAPILARI: Animasyon Yükleme ---
-        # Hocanın Kriteri: Dinamik animasyon yönetimi için sözlük (dictionary) kullanımı[cite: 87].
-        # 'durum' anahtar (key), 'klasor_yolu' ise değer (value) olarak işlenir.
+        #Dinamik animasyon yönetimi için sözlük (dictionary) kullanımı.
+        #'durum' anahtar (key), 'klasor_yolu' ise değer (value) olarak işlenir.
         self.animations = {}
         for durum, klasor_yolu in animasyonlar.items():
             self.animations[durum] = self.yukle_klasor(klasor_yolu)

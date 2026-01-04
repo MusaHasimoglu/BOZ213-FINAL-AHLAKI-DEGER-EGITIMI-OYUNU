@@ -4,7 +4,7 @@ from settings import *
 
 class Player(pygame.sprite.Sprite):
     """
-    OOP KRİTERİ: Kalıtım 
+    OOP: Kalıtım 
     Player sınıfı, Pygame'in Sprite sınıfından miras alarak hazır grafik ve çarpışma 
     yönetimi özelliklerini bünyesine katar.
     """

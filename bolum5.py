@@ -6,7 +6,7 @@ from level_manager import BaseLevel
 class Level5(BaseLevel):
     """
     Bölüm 5: Market - Dürüstlük Testi.
-    OOP KRİTERİ: Kalıtım (Inheritance). BaseLevel sınıfından miras alınarak 
+    OOP: Kalıtım (Inheritance). BaseLevel sınıfından miras alınarak 
     merkezi sistemler (diyalog, analiz, metin sarma) bu bölüme entegre edilir.
     Bu sahne, kasiyerin hata yapması sonucu oluşan bir dürüstlük ikilemini işler.
     """

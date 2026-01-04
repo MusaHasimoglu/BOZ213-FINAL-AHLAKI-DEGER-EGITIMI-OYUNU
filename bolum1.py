@@ -5,7 +5,7 @@ from level_manager import BaseLevel
 
 class Level1(BaseLevel):
     """
-    OOP KRİTERİ: Kalıtım (Inheritance). 
+    OOP: Kalıtım (Inheritance). 
     BaseLevel sınıfından miras alarak diyalog sistemi, metin sarma ve analiz ekranı 
     gibi karmaşık özellikleri hazır olarak kullanır.
     """

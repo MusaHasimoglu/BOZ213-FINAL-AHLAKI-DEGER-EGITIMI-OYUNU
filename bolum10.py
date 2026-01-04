@@ -7,7 +7,7 @@ from level_manager import BaseLevel
 class Level10(BaseLevel):
     """
     Bölüm 10 (FİNAL): Zorbalıkla Mücadele.
-    OOP KRİTERİ: Kalıtım (Inheritance) ve Metod Ezme (Method Overriding). 
+    OOP: Kalıtım (Inheritance) ve Metod Ezme (Method Overriding). 
     BaseLevel sınıfından miras alınır ve final sahnesi için özelleştirmeler yapılır.
     Bu sahne, okul ortamında yaşanan akran zorbalığına karşı ahlaki müdahaleyi işler.
     """
@@ -143,7 +143,7 @@ class Level10(BaseLevel):
 
     def feedback_ekrani_ciz(self):
         """
-        TEKNİK KRİTER: Metod Ezme (Overriding).
+        TEKNİK : Metod Ezme (Overriding).
         Ata sınıftaki (BaseLevel) feedback_ekrani_ciz metodunu ezer.
         Böylece final sahnesi için özel bir çıkış yönergesi yansıtılmış olur.
         """
