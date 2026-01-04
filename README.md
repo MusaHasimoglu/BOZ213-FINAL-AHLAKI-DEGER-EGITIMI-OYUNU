@@ -56,3 +56,7 @@ Proje klasörüne girin ve ana dosyayı şu komutla başlatın
 ```bash 
 python main.py
 ```
+
+Geliştirici: Musa Haşimoğlu
+
+Kurum: Ankara Üniversitesi, Bilgisayar ve Öğretim Teknolojileri Öğretmenliği (BÖTE) Bölümü
