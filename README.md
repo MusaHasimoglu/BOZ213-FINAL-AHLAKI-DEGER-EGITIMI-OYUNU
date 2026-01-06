@@ -58,7 +58,7 @@ Oyun, akıcı bir deneyim için tamamen klavye üzerinden kontrol edilecek şeki
 ### 1. Projeyi Yerel Bilgisayara Yükleme
 Projeyi kendi bilgisayarınıza indirmek için terminale şu komutu yazın:
 ```bash
-git clone https://github.com/MusaHasimoglu/AHLAKI-DEGER-EGITIMI-OYUNU.git
+git clone https://github.com/MusaHasimoglu/BOZ213-FINAL-AHLAKI-DEGER-EGITIMI-OYUNU.git
 ```
 
 ### 2. Gerekli Kütüphanelerin Yüklenmesi
