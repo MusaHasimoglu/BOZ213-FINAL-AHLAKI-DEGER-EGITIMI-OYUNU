@@ -94,6 +94,6 @@ Bu lisans kapsamında:
 * **Değiştirme:** Kodları isteğinize göre düzenleyebilir ve geliştirebilirsiniz.
 * **Dağıtım:** Projenin kopyalarını başkalarıyla paylaşabilirsiniz.
 
-**Not:** Bu projenin kopyalanması veya kullanılması durumunda, orijinal yazara (size) atıfta bulunulması ve bu lisans metninin korunması gerekmektedir.
+**Not:** Bu projenin kopyalanması veya kullanılması durumunda, orijinal yazara atıfta bulunulması ve bu lisans metninin korunması gerekmektedir.
 
 ---
